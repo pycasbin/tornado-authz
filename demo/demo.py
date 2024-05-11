@@ -1,18 +1,17 @@
-# tornado-authz
+# Copyright 2024 The Casbin Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-[![Discord](https://img.shields.io/discord/1022748306096537660?logo=discord&label=discord&color=5865F2)](https://discord.gg/S5UjpzGZjN)
-
-## Installation
-
-Clone this repo
-
-```bash
-git clone https://github.com/pycasbin/tornado-authz
-```
-
-## Simple Example
-
-```python
 import asyncio
 import tornado
 from casbin import Enforcer
@@ -75,24 +74,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-```
-
-## Documentation
-
-The authorization determines a request based on ``{subject, object, action}``, which means what ``subject`` can perform
-what ``action`` on what ``object``. In this plugin, the meanings are:
-
-1. ``subject``: the logged-in username
-2. ``object``: the URL path for the web resource like `dataset1/item1`
-3. ``action``: HTTP method like GET, POST, PUT, DELETE, or the high-level actions you defined like "read-file", "write-blog"
-
-For how to write authorization policy and other details, please refer to [the Casbin's documentation](https://casbin.org).
-
-## Getting Help
-
-- [Casbin](https://casbin.org)
-
-## License
-
-This project is under Apache 2.0 License. See the [LICENSE](LICENSE) file for the full license text.
